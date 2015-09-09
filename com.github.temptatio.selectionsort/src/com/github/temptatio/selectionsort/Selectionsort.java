@@ -7,7 +7,7 @@ package com.github.temptatio.selectionsort;
 public class Selectionsort {
 
 	/**
-	 * Diese Methode sortiert ein doubel-Array
+	 * Diese Methode sortiert ein double-Array
 	 * 
 	 * @param array Das zu sortierende Array
 	 */
@@ -16,14 +16,13 @@ public class Selectionsort {
 		final int laenge = array.length;
 		
 		for(int i = 0; i < laenge; ++i) {
-			double min = array[i];
 			int index = i;
 			for(int j = i; j < laenge; ++j) {
-				if(array[j] < min) {
-					min = array[j];
+				if(array[j] < array[index]) {
 					index = j;
 				}
 			}
+			double min = array[index];
 			array[index] = array[i];
 			array[i] = min;
 		}
